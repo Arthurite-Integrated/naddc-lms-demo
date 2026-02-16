@@ -1,4 +1,4 @@
-import { ArrowUpRight, BookOpen, GraduationCap, Users } from "lucide-react"
+import { ArrowUpRight, BookOpen, GraduationCap, Users, Briefcase, Loan } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function OverviewStats() {
@@ -6,7 +6,7 @@ export function OverviewStats() {
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium">Total Trainees</CardTitle>
+          <CardTitle className="text-sm font-medium">Total Beneficiaries</CardTitle>
           <Users className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
@@ -21,7 +21,7 @@ export function OverviewStats() {
       </Card>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium">Active Courses</CardTitle>
+          <CardTitle className="text-sm font-medium">Active Programs</CardTitle>
           <BookOpen className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
@@ -51,7 +51,7 @@ export function OverviewStats() {
       </Card>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium">Training Partners</CardTitle>
+          <CardTitle className="text-sm font-medium">Training Centers</CardTitle>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -73,7 +73,37 @@ export function OverviewStats() {
             <span className="text-green-500 flex items-center">
               +2 <ArrowUpRight className="h-3 w-3 ml-1" />
             </span>{" "}
-            new partners
+            new centers
+          </p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardTitle className="text-sm font-medium">Job Placements</CardTitle>
+          <Briefcase className="h-4 w-4 text-muted-foreground" />
+        </CardHeader>
+        <CardContent>
+          <div className="text-2xl font-bold">842</div>
+          <p className="text-xs text-muted-foreground">
+            <span className="text-green-500 flex items-center">
+              +28% <ArrowUpRight className="h-3 w-3 ml-1" />
+            </span>{" "}
+            this quarter
+          </p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardTitle className="text-sm font-medium">Loan Disbursements</CardTitle>
+          <Loan className="h-4 w-4 text-muted-foreground" />
+        </CardHeader>
+        <CardContent>
+          <div className="text-2xl font-bold">₦156M</div>
+          <p className="text-xs text-muted-foreground">
+            <span className="text-green-500 flex items-center">
+              +34% <ArrowUpRight className="h-3 w-3 ml-1" />
+            </span>{" "}
+            from last month
           </p>
         </CardContent>
       </Card>

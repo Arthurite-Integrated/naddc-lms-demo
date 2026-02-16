@@ -23,10 +23,10 @@ export default function DashboardPage() {
               <TabsContent value="overview" className="space-y-4">
                 <OverviewStats />
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-                  <Card className="col-span-4">
+                    <Card className="col-span-4">
                     <CardHeader>
                       <CardTitle>Regional Distribution</CardTitle>
-                      <CardDescription>Trainee distribution across geo-political zones</CardDescription>
+                      <CardDescription>Beneficiary distribution across Nigerian states</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
                       <RegionalDistribution />
@@ -35,7 +35,7 @@ export default function DashboardPage() {
                   <Card className="col-span-3">
                     <CardHeader>
                       <CardTitle>Completion Rates</CardTitle>
-                      <CardDescription>Course completion statistics</CardDescription>
+                      <CardDescription>Program completion statistics</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <CompletionRates />
@@ -45,8 +45,8 @@ export default function DashboardPage() {
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                   <Card className="col-span-3">
                     <CardHeader>
-                      <CardTitle>Training Partners</CardTitle>
-                      <CardDescription>Active industry partners</CardDescription>
+                      <CardTitle>Training Centers</CardTitle>
+                      <CardDescription>Active accredited training centers</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <TrainingPartners />
@@ -54,8 +54,8 @@ export default function DashboardPage() {
                   </Card>
                   <Card className="col-span-4">
                     <CardHeader>
-                      <CardTitle>Recent Courses</CardTitle>
-                      <CardDescription>Recently added or updated courses</CardDescription>
+                      <CardTitle>Recent Programs</CardTitle>
+                      <CardDescription>Recently added or updated programs</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <RecentCourses />

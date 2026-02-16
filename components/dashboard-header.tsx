@@ -24,7 +24,7 @@ export function DashboardHeader() {
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search courses, trainees, partners..."
+              placeholder="Search programs, beneficiaries, centers..."
               className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
             />
           </div>
@@ -42,9 +42,9 @@ export function DashboardHeader() {
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Notifications</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>New course added: Automotive Mechatronics</DropdownMenuItem>
-          <DropdownMenuItem>15 trainees completed certification</DropdownMenuItem>
-          <DropdownMenuItem>New training partner: Lanre Shittu Motors</DropdownMenuItem>
+          <DropdownMenuItem>New program added: Digital Marketing Skills</DropdownMenuItem>
+          <DropdownMenuItem>42 beneficiaries completed certification</DropdownMenuItem>
+          <DropdownMenuItem>Training center approved: Lagos Skills Hub</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
       <DropdownMenu>

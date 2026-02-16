@@ -29,8 +29,8 @@ export function DashboardSidebar() {
     <Sidebar>
       <SidebarHeader className="flex items-center justify-center py-4">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/naddc-logo.png" alt="NADDC Logo" width={50} height={50} className="h-10 w-10" />
-          <div className="font-bold text-lg">NADDC LMS</div>
+          <Image src="https://atr-nde-logo.s3.us-east-1.amazonaws.com/nde-logo.png" alt="NDE Logo" width={50} height={50} className="h-10 w-10" />
+          <div className="font-bold text-lg">NDE LMS</div>
         </Link>
       </SidebarHeader>
       <SidebarSeparator />
@@ -51,7 +51,7 @@ export function DashboardSidebar() {
                 <SidebarMenuButton asChild isActive={isActive("/courses")}>
                   <Link href="/courses">
                     <BookOpen />
-                    <span>Courses</span>
+                    <span>Programs</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -59,7 +59,7 @@ export function DashboardSidebar() {
                 <SidebarMenuButton asChild isActive={isActive("/trainees")}>
                   <Link href="/trainees">
                     <Users />
-                    <span>Trainees</span>
+                    <span>Beneficiaries</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -100,7 +100,7 @@ export function DashboardSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="p-4">
-        <div className="text-xs text-gray-500">Technical Skills Development</div>
+        <div className="text-xs text-gray-500">Employment Services</div>
       </SidebarFooter>
     </Sidebar>
   )

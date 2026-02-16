@@ -22,27 +22,27 @@ export default function CoursesPage() {
       <DashboardHeader />
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <h2 className="text-3xl font-bold tracking-tight">Courses</h2>
+          <h2 className="text-3xl font-bold tracking-tight">Programs</h2>
           <div className="flex items-center gap-2">
             <div className="relative flex-1 md:w-64">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search courses..."
+                placeholder="Search programs..."
                 className="w-full appearance-none pl-8 shadow-none"
               />
             </div>
             <Button variant="outline">
               <Filter className="mr-2 h-4 w-4" /> Filter
             </Button>
-            <Button variant="default">Add New Course</Button>
+            <Button variant="default">Add New Program</Button>
           </div>
         </div>
 
         <Tabs defaultValue="all" className="space-y-4">
           <TabsList className="w-full sm:w-auto flex justify-between sm:inline-flex">
             <TabsTrigger value="all" className="flex-1 sm:flex-initial">
-              All Courses
+              All Programs
             </TabsTrigger>
             <TabsTrigger value="active" className="flex-1 sm:flex-initial">
               Active
@@ -74,7 +74,10 @@ export default function CoursesPage() {
                   </div>
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-start">
-                      <div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Badge variant="secondary" className="text-xs">{course.category}</Badge>
+                        </div>
                         <CardTitle className="text-xl">{course.title}</CardTitle>
                         <CardDescription className="flex items-center mt-1">
                           <span className="font-medium text-green-700">{course.partner}</span>
@@ -113,8 +116,8 @@ export default function CoursesPage() {
                     </div>
                   </CardContent>
                   <CardFooter className="pt-2">
-                    <Button variant="outline" size="sm" className="w-full" asChild>
-                      <Link href={`/courses/${course.id}`}>View Course Details</Link>
+                    <Button variant="default" size="sm" className="w-full" asChild>
+                      <Link href={`/courses/${course.id}`}>Apply Now</Link>
                     </Button>
                   </CardFooter>
                 </Card>
@@ -138,8 +141,9 @@ export default function CoursesPage() {
 const courses = [
   {
     id: 1,
-    title: "Automotive Mechatronics",
-    partner: "Lanre Shittu Motors",
+    title: "Digital Marketing Skills",
+    category: "Vocational Skills",
+    partner: "Lagos Tech Hub",
     state: "Lagos",
     enrolled: 45,
     contentTypes: ["video", "pdf"],
@@ -150,9 +154,10 @@ const courses = [
   },
   {
     id: 2,
-    title: "Introduction to Welding",
-    partner: "Ajawole Technical",
-    state: "Abuja",
+    title: "Vocational Welding Certification",
+    category: "Vocational Skills",
+    partner: "Kano Skills Center",
+    state: "Kano",
     enrolled: 32,
     contentTypes: ["video", "pdf", "audio"],
     date: "2023-04-10",
@@ -162,9 +167,10 @@ const courses = [
   },
   {
     id: 3,
-    title: "Electricity and Electromagnetism",
-    partner: "Innoson Motors",
-    state: "Enugu",
+    title: "Electrical Installation & Maintenance",
+    category: "Vocational Skills",
+    partner: "Port Harcourt Training Center",
+    state: "Rivers",
     enrolled: 38,
     contentTypes: ["video", "pdf"],
     date: "2023-04-05",
@@ -174,9 +180,10 @@ const courses = [
   },
   {
     id: 4,
-    title: "Automotive Design Fundamentals",
-    partner: "Coscharis Group",
-    state: "Lagos",
+    title: "Small Scale Enterprise Startup",
+    category: "Small Scale Enterprises",
+    partner: "Abuja Business Center",
+    state: "Abuja",
     enrolled: 27,
     contentTypes: ["video", "pdf"],
     date: "2023-03-28",
@@ -186,9 +193,10 @@ const courses = [
   },
   {
     id: 5,
-    title: "Vehicle Diagnostics",
-    partner: "Lanre Shittu Motors",
-    state: "Lagos",
+    title: "Rural Agriculture Business",
+    category: "Rural Employment",
+    partner: "Ibadan Agricultural Institute",
+    state: "Oyo",
     enrolled: 36,
     contentTypes: ["video", "pdf"],
     date: "2023-03-20",
@@ -198,8 +206,9 @@ const courses = [
   },
   {
     id: 6,
-    title: "Automotive Painting",
-    partner: "Innoson Motors",
+    title: "Public Works Infrastructure Training",
+    category: "Special Public Works",
+    partner: "Construction Excellence Ltd",
     state: "Enugu",
     enrolled: 29,
     contentTypes: ["video", "pdf"],

@@ -15,19 +15,19 @@ export default function TraineesPage() {
       <DashboardHeader />
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-bold tracking-tight">Trainees</h2>
+          <h2 className="text-3xl font-bold tracking-tight">Beneficiaries</h2>
           <div className="flex items-center gap-2">
             <Button variant="outline">
               <Download className="mr-2 h-4 w-4" /> Export
             </Button>
-            <Button>Add New Trainee</Button>
+            <Button>Add New Beneficiary</Button>
           </div>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Trainees</CardTitle>
+              <CardTitle className="text-sm font-medium">Total Beneficiaries</CardTitle>
               <UserCheck className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -36,7 +36,7 @@ export default function TraineesPage() {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Active Trainees</CardTitle>
+              <CardTitle className="text-sm font-medium">Active Beneficiaries</CardTitle>
               <UserCheck className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -45,7 +45,7 @@ export default function TraineesPage() {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Certified</CardTitle>
+              <CardTitle className="text-sm font-medium">Employed</CardTitle>
               <GraduationCap className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -86,7 +86,7 @@ export default function TraineesPage() {
         <div className="flex items-center space-x-2">
           <div className="relative flex-1">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input type="search" placeholder="Search trainees..." className="w-full appearance-none pl-8 shadow-none" />
+            <Input type="search" placeholder="Search beneficiaries..." className="w-full appearance-none pl-8 shadow-none" />
           </div>
           <Button variant="outline">
             <Filter className="mr-2 h-4 w-4" /> Filter
@@ -95,9 +95,9 @@ export default function TraineesPage() {
 
         <Tabs defaultValue="all" className="space-y-4">
           <TabsList>
-            <TabsTrigger value="all">All Trainees</TabsTrigger>
+            <TabsTrigger value="all">All Beneficiaries</TabsTrigger>
             <TabsTrigger value="active">Active</TabsTrigger>
-            <TabsTrigger value="certified">Certified</TabsTrigger>
+            <TabsTrigger value="employed">Employed</TabsTrigger>
             <TabsTrigger value="inactive">Inactive</TabsTrigger>
           </TabsList>
           <TabsContent value="all" className="space-y-4">
@@ -108,8 +108,8 @@ export default function TraineesPage() {
                     <TableRow>
                       <TableHead className="w-[80px]">ID</TableHead>
                       <TableHead>Name</TableHead>
-                      <TableHead>Course</TableHead>
-                      <TableHead>Partner</TableHead>
+                      <TableHead>Program</TableHead>
+                      <TableHead>Training Center</TableHead>
                       <TableHead>State</TableHead>
                       <TableHead>
                         <div className="flex items-center">
@@ -132,16 +132,18 @@ export default function TraineesPage() {
                             {trainee.name}
                           </div>
                         </TableCell>
-                        <TableCell>{trainee.course}</TableCell>
-                        <TableCell>{trainee.partner}</TableCell>
+                        <TableCell>{trainee.program}</TableCell>
+                        <TableCell>{trainee.trainingCenter}</TableCell>
                         <TableCell>{trainee.state}</TableCell>
                         <TableCell>
                           <Badge
                             variant={
-                              trainee.status === "Certified"
+                              trainee.status === "Employed"
                                 ? "default"
-                                : trainee.status === "In Progress"
+                                : trainee.status === "Self-Employed"
                                   ? "secondary"
+                                : trainee.status === "In Progress"
+                                  ? "outline"
                                   : "outline"
                             }
                           >
@@ -168,51 +170,51 @@ export default function TraineesPage() {
 
 const trainees = [
   {
-    id: "TR-001",
+    id: "BEN-001",
     name: "John Okafor",
-    course: "Automotive Mechatronics",
-    partner: "Lanre Shittu Motors",
+    program: "Digital Marketing Skills",
+    trainingCenter: "Lagos Tech Hub",
     state: "Lagos",
-    status: "Certified",
+    status: "Employed",
   },
   {
-    id: "TR-002",
+    id: "BEN-002",
     name: "Amina Ibrahim",
-    course: "Introduction to Welding",
-    partner: "Ajawole Technical",
-    state: "Abuja",
-    status: "In Progress",
-  },
-  {
-    id: "TR-003",
-    name: "Chukwudi Eze",
-    course: "Electricity and Electromagnetism",
-    partner: "Innoson Motors",
-    state: "Enugu",
-    status: "Certified",
-  },
-  {
-    id: "TR-004",
-    name: "Folake Adeyemi",
-    course: "Automotive Design Fundamentals",
-    partner: "Coscharis Group",
-    state: "Lagos",
-    status: "In Progress",
-  },
-  {
-    id: "TR-005",
-    name: "Mohammed Bello",
-    course: "Vehicle Diagnostics",
-    partner: "Lanre Shittu Motors",
+    program: "Vocational Welding Certification",
+    trainingCenter: "Kano Skills Center",
     state: "Kano",
-    status: "Not Started",
+    status: "In Progress",
   },
   {
-    id: "TR-006",
+    id: "BEN-003",
+    name: "Chukwudi Eze",
+    program: "Electrical Installation & Maintenance",
+    trainingCenter: "Port Harcourt Training Center",
+    state: "Rivers",
+    status: "Employed",
+  },
+  {
+    id: "BEN-004",
+    name: "Folake Adeyemi",
+    program: "Small Scale Enterprise Startup",
+    trainingCenter: "Abuja Business Center",
+    state: "Abuja",
+    status: "Self-Employed",
+  },
+  {
+    id: "BEN-005",
+    name: "Mohammed Bello",
+    program: "Rural Agriculture Business",
+    trainingCenter: "Ibadan Agricultural Institute",
+    state: "Oyo",
+    status: "In Progress",
+  },
+  {
+    id: "BEN-006",
     name: "Ngozi Okonkwo",
-    course: "Automotive Painting",
-    partner: "Innoson Motors",
-    state: "Anambra",
-    status: "Certified",
+    program: "Public Works Infrastructure Training",
+    trainingCenter: "Construction Excellence Ltd",
+    state: "Enugu",
+    status: "Employed",
   },
 ]
