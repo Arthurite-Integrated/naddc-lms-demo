@@ -8,8 +8,8 @@ import { DashboardSidebar } from "@/components/dashboard-sidebar"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "NADDC Technical Skills Development LMS",
-  description: "Learning Management System for NADDC",
+  title: "National Directorate of Employment LMS",
+  description: "Learning Management System for the National Directorate of Employment",
     generator: 'v0.dev'
 }
 
@@ -28,7 +28,7 @@ export default function RootLayout({
               <main className="flex-1 overflow-y-auto">
                 {children}
                 <footer className="border-t py-4 px-6 text-center text-sm text-gray-500">
-                  © {new Date().getFullYear()} NADDC Technical Skills Development LMS. Built by Arthurite Integrated.
+                  © {new Date().getFullYear()} National Directorate of Employment. Powered by Arthurite Integrated.
                 </footer>
               </main>
             </div>
